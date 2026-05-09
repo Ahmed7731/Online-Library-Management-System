@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Admin Dashboard — Library Management System{% endblock %}
+{% block body_class %}page-dashboard{% endblock %}
+
+{% block nav_links %}
+    <a href="{% url 'admin_home' %}" class="active">Home</a>
+    <a href="#">Add Book</a>
+    <a href="#">Manage Books</a>
+    <a href="#">View Books</a>
+    <a href="{% url 'logout' %}" class="logout-link">Logout</a>
+{% endblock %}
+
+{% block body %}
+<div class="dashboard-body">
+    <h2>Hello, {{ username }}</h2>
+    <p class="subtitle">Manage the library from your admin panel.</p>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-info">
+                <h3>➕ Add Book</h3>
+                <p>Add new books to the library system</p>
+            </div>
+            <a href="#">Open</a>
+        </div>
+
+        <div class="card">
+            <div class="card-info">
+                <h3>✏️ Edit Book</h3>
+                <p>Update existing book details and information</p>
+            </div>
+            <a href="#">Open</a>
+        </div>
+
+        <div class="card">
+            <div class="card-info">
+                <h3>🛠 Manage Books</h3>
+                <p>Delete or reorganize books in the library</p>
+            </div>
+            <a href="#">Open</a>
+        </div>
+
+        <div class="card">
+            <div class="card-info">
+                <h3>📚 View Books</h3>
+                <p>See the full catalogue of books in the system</p>
+            </div>
+            <a href="#">Open</a>
+        </div>
+
+    </div>
+</div>
+<p class="dashboard-footer">© 2026 Library Management System</p>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/admin_home.js' %}"></script>
+{% endblock %}
