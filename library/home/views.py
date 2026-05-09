@@ -116,7 +116,7 @@ def logout_view(request):
     return redirect('home')
 
 
-# ── Error handlers ─────────────────────────────────────────
+# Error handlers
 def error_400(request, exception=None):
     return render(request, '400.html', status=400)
 
