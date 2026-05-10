@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home — Library Management System{% endblock %}
+{% block body_class %}page-home{% endblock %}
+
+{% block nav_links %}
+    <a href="{% url 'home' %}"   class="active">Home</a>
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'signup' %}">Sign Up</a>
+{% endblock %}
+
+{% block body %}
+<div class="home-content">
+    <div class="home-welcome-box">
+        <h1>Library Management System</h1>
+        <p>
+            Search and borrow books with ease.<br>
+            Users can browse the catalogue and track borrowed books.<br>
+            Admins can add, edit, and manage the entire library.
+        </p>
+        <div class="btn-row">
+            <button id="login-btn">Login</button>
+            <button id="signup-btn">Create an Account</button>
+        </div>
+    </div>
+    <p class="page-footer">© 2026 Library Management System</p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/home.js' %}"></script>
+{% endblock %}
