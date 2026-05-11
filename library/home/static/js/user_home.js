@@ -1,13 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (user) {
+        document.getElementById("welcome").textContent =
+            "Hello " + user.username + " 👋";
+    }
+});
+document.addEventListener("DOMContentLoaded", function () {
 
     const logoutBtn = document.getElementById("logout-btn");
 
-    if (logoutBtn) {
-        logoutBtn.addEventListener("click", function (e) {
-            // The logout link already points to {% url 'logout' %} in the template,
-            // so a normal click works. This handler is kept for any extra logic.
-            // Let the link navigate naturally.
-        });
-    }
+    logoutBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // remove user session
+        localStorage.removeItem("user");
+
+        // redirect
+        window.location.href = "home.html";
+    });
 
 });

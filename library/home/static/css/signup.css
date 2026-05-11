@@ -1,0 +1,136 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background:  #faead5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1,h2 {
+  color: #333;
+  margin-top: 20px;
+}
+
+nav {
+  background: transparent;
+  padding: 10px;
+}
+
+nav a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #1abc9c;
+}
+
+form {
+  background: white;
+  padding: 30px;
+  margin-top: 20px;
+  border-radius: 15px;
+  width: 300px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  color: black;
+}
+
+label {
+  font-weight: bold;
+}
+
+#email,
+#password,
+#confirm_password,
+#username {
+  width: 90%;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 9px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+  font-size: 15px;
+}
+
+#email:focus,
+#password:focus,
+#username:focus,
+#confirm_password:focus {
+border-color: black;
+  outline: none;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+#signup-Btn {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background: none;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#signup-Btn:hover {
+    background-color: #333;
+    color: #fffefb;
+}
+
+#signup-Btn:active {
+  transform: scale(0.95);
+}
+
+p {
+  color: #333;
+}
+#admin_yes,
+#admin_no {
+  margin: 5px;
+}
+#username-error,
+#email-error,
+#password-error,
+#confirm-password-error,
+#admin-error {
+  color:red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.password-container {
+    position: relative;
+    width: 100%; 
+}
+
+.password-container input {
+    width: 90%;
+    padding: 15px;
+    padding-right: 60px;
+    margin-top: 15px;
+    margin-bottom: 9px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+.password-container button {
+    position: absolute;
+    right: 10px;
+    top: 55%;
+    transform: translateY(-50%);
+    
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+.password-container button:hover {
+    color: #1abc9c;
+}

@@ -1,0 +1,88 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Edit book</title>
+    <script type="module" src="{% static 'js/admin_edit_book.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/admin_edit_book.css' %}" />
+  </head>
+  <center>
+    <h1>Library Management System</h1>
+    <br />
+    <h2>Admin</h2>
+  </center>
+
+  <hr />
+
+  <center>
+    <nav>
+        <a href="{% url 'admin_home' %}">Home</a> |
+        <a href="{% url 'admin_add_book' %}">Add Book</a> |
+        <a href="{% url 'admin_edit_book' %}">Edit Book</a> |
+        <a href="{% url 'admin_manage_books' %}">Manage Books</a> |
+        <a href="{% url 'admin_view_books' %}">View Books</a> |
+        <a href="#" id="logout-btn">Logout</a>
+    </nav>
+  </center>
+
+  <hr />
+
+  <center>
+    <form>
+      <h3>Select a Book to Edit</h3>
+      <div class="form_layout">
+        <div class="left_form">
+          <p>Select Book</p>
+          <select id="bookSelect">
+            <option></option>
+          </select>
+          <br /><br />
+          <h3>Edit Book Details</h3>
+
+          <p>Book ID</p>
+          <input type="text" id="bookId" placeholder="Book ID" />
+
+          <p>Book Name</p>
+          <input type="text" id="bookName" placeholder="Book Name" />
+
+          <p>Author</p>
+          <input type="text" id="author" placeholder="Author" />
+
+          <p>Category</p>
+          <input type="text" id="category" placeholder="Category" />
+
+          <p>Description</p>
+          <textarea
+            id="description"
+            placeholder="Book description"
+            style="height: 100px"
+          ></textarea>
+        </div>
+        <div class="right_form">
+          <p>Cover</p>
+          <input
+            type="text"
+            id="thumbnailURL"
+            placeholder="Paste image URL here"
+          />
+          <div class="image_preview_container">
+            <img
+              id="thumbnailPreview"
+              alt="Book  Cover"
+              style="display: none"
+            />
+            <span id="imagePlaceHolder"> No Image selected</span>
+          </div>
+          <input id="change-image-btn" type="button" value="Change Image" />
+        </div>
+      </div>
+      <input type="submit" value="Submit" />
+    </form>
+  </center>
+  >
+
+  <center>
+    <hr />
+    <p>© 2026 Library Management System</p>
+  </center>
+</html>

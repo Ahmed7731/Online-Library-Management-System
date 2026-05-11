@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Book Details</title>
+    <link rel="stylesheet" href="{% static 'css/user_book_details.css' %}">
+</head>
+
+<body>
+
+<center>
+
+    <h1>Library Management System</h1>
+
+    <hr>
+
+    <nav>
+        <a href="{% url 'user_available_books' %}">Back</a>
+    </nav>
+
+    <hr>
+
+    <h2 id="title">Book Name</h2>
+    <img id="cover" src="" alt="">
+    <p><strong>Author:</strong> <span id="bAuthor"></span></p>
+    <p><strong>Category:</strong> <span id="bCategory"></span></p>
+    <p><strong>Status:</strong> <span id="bStatus"></span></p>
+    <div class="description-class">
+        <p><strong>Description:</strong> <br> <span id="bDesc"></span></p>
+    </div>
+
+    <button id="borrowBtn">Borrow Book</button>
+
+    <hr>
+    <p>© 2026 Library Management System</p>
+
+</center>
+
+<script src="{% static 'js/user_borrow.js' %}"></script>
+<script src="{% static 'js/user_book_details.js' %}"></script>
+
+</body>
+</html>

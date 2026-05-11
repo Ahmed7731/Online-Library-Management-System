@@ -1,0 +1,50 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="{% static 'js/admin_manage_books.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/admin_manage_books.css' %}" />
+    <title>Manage Books</title>
+  </head>
+  <body>
+    <center>
+      <h1>Library Management System</h1>
+      <br />
+      <h2>Admin</h2>
+    </center>
+    <hr />
+
+    <center>
+    <nav>
+        <a href="{% url 'admin_home' %}">Home</a> |
+        <a href="{% url 'admin_add_book' %}">Add Book</a> |
+        <a href="{% url 'admin_edit_book' %}">Edit Book</a> |
+        <a href="{% url 'admin_manage_books' %}">Manage Books</a> |
+        <a href="{% url 'admin_view_books' %}">View Books</a> |
+        <a href="#" id="logout-btn">Logout</a>
+    </nav>
+      <hr />
+      <h2>Mange books</h2>
+    </center>
+
+    <center>
+      <form>
+        <table border="3">
+          <tr>
+            <th>ID</th>
+            <th>Cover</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </table>
+      </form>
+      <hr />
+      <p>© 2026 Library Management System</p>
+    </center>
+  </body>
+</html>

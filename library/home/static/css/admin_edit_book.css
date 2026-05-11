@@ -1,0 +1,164 @@
+body {
+    font-family: Arial;
+    background-color: #faead5;
+    margin: 0;
+    padding-top: 70px;
+}
+
+
+h1,
+h2 {
+    color: #2c3e50;
+}
+
+nav a {
+    text-decoration: none;
+    color: #6b98b6;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #3b32c3;
+}
+
+form {
+    background: #faead5cb;
+    padding: 30px;
+    width: 70%;
+    max-width: 900px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    margin: 0, auto;
+    border-radius: 12px;
+}
+
+.form_layout{
+display: flex;
+gap: 40px;
+margin-top: 20px;
+}
+
+.left_form{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+.right_form{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 40px;
+}
+
+
+input [type = "text"],
+textarea,
+select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom:  15px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"], input[type = "button"] {
+    width: 100%;
+    height: 50px;
+    border-radius: 12px;
+    background: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background: #2980b9;
+}
+
+* {
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button,
+a {
+    transition: all 0.3s ease;
+}
+
+button:hover,
+a:hover {
+    transform: scale(1.05);
+}
+
+table {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background: #faead5;
+    padding: 10px;
+    z-index: 1000;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+button {
+    background: #3a5890;
+    color: white;
+    border-radius: 8px;
+    padding: 8px 15px;
+    border: none;
+}
+
+button:hover {
+    background: #2c3e50;
+}
+
+tr:nth-child(even) {
+    background-color: #f2dcc2;
+}
+
+tr:hover {
+    background-color: #ffe9c7;
+}
+
+input {
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #3a5890;
+    box-shadow: 0 0 8px rgba(58, 88, 144, 0.5);
+}
+
+#thumbnailPreview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image_preview_container {
+margin-top: 20px;
+margin-bottom: 10px;
+width: 100%;
+min-height: 250px;
+background-color: #f5eedf;
+border-radius: 8px;
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+text-align: center;
+box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}

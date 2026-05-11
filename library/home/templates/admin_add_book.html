@@ -1,0 +1,89 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Add book</title>
+    <script type="module" src="{% static 'js/admin_add_books.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/admin_add_book.css' %}" />
+  </head>
+  <body>
+    <center>
+      <h1>Library Management System</h1>
+      <br />
+      <h2>Admin</h2>
+      <hr />
+    <nav>
+        <a href="{% url 'admin_home' %}">Home</a> |
+        <a href="{% url 'admin_add_book' %}">Add Book</a> |
+        <a href="{% url 'admin_edit_book' %}">Edit Book</a> |
+        <a href="{% url 'admin_manage_books' %}">Manage Books</a> |
+        <a href="{% url 'admin_view_books' %}">View Books</a> |
+        <a href="#" id="logout-btn">Logout</a>
+    </nav>
+      <hr />
+
+      <h1>Add book</h1>
+
+      <div style="display: flex; justify-content: center">
+        <p style="text-align: center; max-width: 300px">
+          Add multiple books at once. click add book then, type in the data.
+          Once finished click submit to add all books at once.
+        </p>
+      </div>
+
+      <form>
+        <table border="1" cellpadding="4" cellspacing="0" id="submit_table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Book Name</th>
+              <th>Author</th>
+              <th>Category</th>
+              <th>Page Count</th>
+              <th>Description</th>
+              <th>Cover Url</th>
+              <th>Preview</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" placeholder="Book ID" /></td>
+              <td><input type="text" name="Name" placeholder="name" /></td>
+              <td><input type="text" name="Author" placeholder="author" /></td>
+              <td>
+                <input type="text" name="Category" placeholder="category" />
+              </td>
+              <td><input type="number" name="Count" placeholder="count" /></td>
+              <td><input type="text" placeholder="Description" /></td>
+              <td>
+                <input type="text" placeholder="Paste Image Url here" />
+              </td>
+              <td>
+                <img src="">
+              </td>
+              <td>
+                <button type="button" class="delete" style="margin-right: 6px">
+                  X
+                </button>
+                <button
+                  type="button"
+                  class="load"
+                  style="background-color: green"
+                >
+                  Load
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <button type="button" id="add_book">Add another book</button>
+        <button type="button" id="submit_all_button">Submit All</button>
+        <button type="button" id="upload_btn">Upload Json</button>
+      </form>
+      <hr />
+      <p>© 2026 Library Management System</p>
+    </center>
+  </body>
+</html>
