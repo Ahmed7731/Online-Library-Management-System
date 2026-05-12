@@ -1,71 +1,72 @@
-{% extends 'base.html' %}
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+<center>
+    <h1>Library Management System</h1>
+    <hr>
+    <nav>
+        <a href="{% url 'home' %}">Home</a> |
+        <a href="{% url 'login' %}">Login</a> |
+        <a href="{% url 'signup' %}">Sign Up</a>
+    </nav>
+    <hr>
+    <h2>Sign Up</h2>
+    <form novalidate>
+        <!-- Username -->
+        <label for="username">Username</label><br>
+        <input type="text" id="username" name="username" placeholder="Enter username"><br><br>
 
-{% block title %}Sign Up — Library Management System{% endblock %}
-{% block body_class %}page-signup{% endblock %}
+        <p class="error" id="username-error"></p>
 
-{% block nav_links %}
-    <a href="{% url 'home' %}">Home</a>
-    <a href="{% url 'login' %}">Login</a>
-    <a href="{% url 'signup' %}" class="active">Sign Up</a>
-{% endblock %}
+        <!-- Email -->
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email" placeholder="Enter email address"><br><br>
 
-{% block body %}
-<div class="form-card">
-    <h2>Create Account</h2>
+        <p class="error" id="email-error"></p>
 
-    <form method="POST" action="{% url 'signup' %}" novalidate>
-        {% csrf_token %}
-
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username"
-               placeholder="Enter username"
-               value="{{ post.username|default:'' }}">
-        <span class="error" id="username-error">{{ errors.username|default:'' }}</span>
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email"
-               placeholder="Enter email address"
-               value="{{ post.email|default:'' }}">
-        <span class="error" id="email-error">{{ errors.email|default:'' }}</span>
-
+        <!-- Password -->
         <label for="password">Password</label>
-        <div class="password-container">
-            <input type="password" id="password" name="password"
-                   placeholder="Enter password">
-            <button type="button" class="toggle-btn" id="show1">Show</button>
-        </div>
-        <span class="error" id="password-error">{{ errors.password|default:'' }}</span>
 
+        <div class="password-container">
+            <input type="password" id="password" placeholder="Enter password">
+            <button type="button" id="show1">Show</button>
+        </div>
+
+        <p class="error" id="password-error"></p>
+
+        <br>
+
+        <!-- Confirm Password -->
         <label for="confirm_password">Confirm Password</label>
-        <div class="password-container">
-            <input type="password" id="confirm_password" name="confirm_password"
-                   placeholder="Re-enter password">
-            <button type="button" class="toggle-btn" id="show2">Show</button>
-        </div>
-        <span class="error" id="confirm-password-error">{{ errors.confirm_password|default:'' }}</span>
 
-        <div class="radio-row">
-            <span>Is Admin?</span>
-            <label>
-                <input type="radio" name="is_admin" id="admin_yes" value="1"
-                       {% if post.is_admin == '1' %}checked{% endif %}>
-                Yes
-            </label>
-            <label>
-                <input type="radio" name="is_admin" id="admin_no" value="0"
-                       {% if post.is_admin == '0' %}checked{% endif %}>
-                No
-            </label>
+        <div class="password-container">
+            <input type="password" id="confirm_password" placeholder="Re-enter password">
+            <button type="button" id="show2">Show</button>
         </div>
-        <span class="error" id="admin-error">{{ errors.is_admin|default:'' }}</span>
+        <p class="error" id="confirm-password-error"></p>
+
+        Is Admin:
+        <input type="radio" id="admin_yes" name="is_admin" value="1">
+        <label for="admin_yes">Yes</label>
+
+        <input type="radio" id="admin_no" name="is_admin" value="0">
+        <label for="admin_no">No</label>
+        <p class="error" id="admin-error">
+
+        </p>
+
+        <br><br>
 
         <input type="submit" value="Sign Up" id="signup-Btn">
     </form>
-</div>
-<p class="page-footer">© 2026 Library Management System</p>
-{% endblock %}
-
-{% block scripts %}
-    <script src="{% static 'js/signup.js' %}"></script>
-{% endblock %}
+    <hr>
+    <p>© 2026 Library Management System</p>
+</center>
+<script src="{% static 'js/signup.js' %}"></script>
+</body>
+</html>

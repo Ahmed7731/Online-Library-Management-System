@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Library - Book Details</title>
+
+
+</head>
+<body>
+<center>
+    <h1>Library Management System</h1>
+
+    <hr>
+    <nav>
+        <a href="{% url 'user_available_books' %}">Available Books</a>
+
+    </nav>
+    <hr>
+    <img src="https://minecraft.wiki/images/Book_JE2_BE2.png?caac6&format=original"
+         alt="You seem to be connected to the cobweb instead :')" height="100px" width="100px"> <!--License compliant-->
+    <h1>Book Details</h1>
+    <p><strong>Title:</strong> Example Book</p>
+    <p><strong>Author:</strong> Author Name</p>
+    <p><strong>Publisher: Lorem Ipsum</strong></p>
+    <p><strong>Publishing date: Long ago</strong></p>
+    <p><strong>ISBN: Zero oneen...</strong></p>
+    <p><strong>Category:</strong> Fiction</p>
+    <p><strong>Description:</strong> Adventure story.</p>
+    <p><strong>Status:</strong> Available</p>
+
+    <form action="user_borrowed.html">
+        <button type="submit">Borrow Book</button>
+    </form>
+    <hr>
+    <p>© 2026 Library Management System</p>
+</center>
+<script src="{% static 'js/user_borrow.js' %}"></script>
+<script src="{% static 'js/user_available_books.js' %}"></script>
+</body>
+</html>
+

@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Books</title>
+    <link rel="stylesheet" href="{% static 'css/user_available_books.css' %}">
+</head>
+
+<body>
+
+<center>
+    <h1>Library Management System</h1>
+    <br>
+    <h2>Hello User</h2>
+</center>
+
+<hr>
+
+<center>
+    <nav>
+        <a href="{% url 'user_home' %}">Home</a> |
+        <a href="{% url 'user_search' %}">Search</a> |
+        <a href="{% url 'user_borrowed_books' %}">Borrowed Books</a> |
+        <a href="{% url 'user_available_books' %}">Available Books</a> |
+        <a href="#" id="logout-btn">Logout</a>
+    </nav>
+    <hr>
+</center>
+
+<br/>
+
+<center>
+    <h2>View Books</h2>
+</center>
+
+<center>
+
+
+    <table border="3">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Borrow</th>
+            <th>Details</th>
+        </tr>
+    </table>
+
+    <hr>
+    <p>© 2026 Library Management System</p>
+
+</center>
+
+
+<script src="{% static 'js/user_borrow.js' %}"></script>
+<script src="{% static 'js/user_available_books.js' %}"></script>
+
+</body>
+</html>

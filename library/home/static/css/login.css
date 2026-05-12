@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #faead5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1,h2 {
+  color: #333;
+  margin-top: 20px;
+}
+
+nav {
+  background: transparent;
+  padding: 10px;
+}
+
+nav a {
+  color:#333;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #1abc9c;
+}
+
+form {
+  background: white;
+  padding: 30px;
+  margin-top: 20px;
+  border-radius: 15px;
+  width: 300px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  color: #333;
+}
+
+label {
+  font-weight: bold;
+}
+
+input {
+  width: 90%;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 9px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+  font-size: 15px;
+}
+
+#email:focus,
+#password:focus {
+border-color: #333;
+  outline: none;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+#login-Btn {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background: none;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#login-Btn:hover {
+    background-color: #333;
+    color: #fffefb;
+}
+
+#login-Btn:active {
+  transform: scale(0.95);
+}
+
+.signup-Btn {
+  color: #555;
+}
+
+.signup-Btn:hover {
+  color: #1abc9c;
+}
+
+p {
+  color: #333;
+}
+#email-error,
+#password-error{
+  color:red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-container input {
+    padding-right: 15px;
+}
+
+.password-container button {
+    position: absolute;
+    right: 10px;
+    top: 55%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+.password-container button:hover {
+    color: #1abc9c;
+}

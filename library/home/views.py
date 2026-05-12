@@ -21,7 +21,7 @@ def login_view(request):
     errors = {}
 
     if request.method == 'POST':
-        email    = request.POST.get('email', '').strip()
+        email = request.POST.get('email', '').strip()
         password = request.POST.get('password', '').strip()
 
         if not email:
@@ -56,11 +56,11 @@ def signup_view(request):
     errors = {}
 
     if request.method == 'POST':
-        username         = request.POST.get('username', '').strip()
-        email            = request.POST.get('email', '').strip()
-        password         = request.POST.get('password', '').strip()
+        username = request.POST.get('username', '').strip()
+        email = request.POST.get('email', '').strip()
+        password = request.POST.get('password', '').strip()
         confirm_password = request.POST.get('confirm_password', '').strip()
-        is_admin_val     = request.POST.get('is_admin', '')
+        is_admin_val = request.POST.get('is_admin', '')
 
         if not username:
             errors['username'] = 'Username is required'
@@ -96,19 +96,76 @@ def signup_view(request):
 
     return render(request, 'signup.html', {'errors': errors, 'post': request.POST})
 
-
-@login_required(login_url='/login/')
+# todo remove hardcoded user
+# @login_required(login_url='/login/')
 def user_home_view(request):
-    if request.user.is_staff:
-        return redirect('admin_home')
-    return render(request, 'user_home.html', {'username': request.user.username})
+    # if request.user.is_staff:
+    #     return redirect('admin_home')
+    return render(request, 'user_home.html', {'username': 'test_user'})
+
+def user_search_view(request):
+    # if request.user.is_staff:
+    #     return redirect('admin_home')
+    return render(request, 'user_search.html', {'username': 'test_user'})
 
 
-@login_required(login_url='/login/')
+def user_borrowed_books_view(request):
+    # if request.user.is_staff:
+    #     return redirect('admin_home')
+    return render(request, 'user_borrowed_books.html', {'username': 'test_user'})
+
+
+def user_borrow_view(request):
+    # if request.user.is_staff:
+    #     return redirect('admin_home')
+    return render(request, 'user_borrow.html', {'username': 'test_user'})
+
+def user_book_details_view(request):
+    # if request.user.is_staff:
+    #     return redirect('admin_home')
+    return render(request, 'user_book_details.html', {'username': 'test_user'})
+
+def user_available_books_view(request):
+    # if request.user.is_staff:
+    #     return redirect('admin_home')
+    return render(request, 'user_available_books.html', {'username': 'test_user'})
+
+
+
+
+
+# todo remove hardcoded admin
+# @login_required(login_url='/login/')
 def admin_home_view(request):
-    if not request.user.is_staff:
-        return redirect('user_home')
-    return render(request, 'admin_home.html', {'username': request.user.username})
+    # if not request.user.is_staff:
+    #     return redirect('user_home')
+    return render(request, 'admin_home.html', {'username': 'test_admin'})
+
+
+# @login_required(login_url='/login/')
+def admin_add_book_view(request):
+    # if not request.user.is_staff:
+    #     return redirect('user_home')
+    return render(request, 'admin_add_book.html', {'username': 'test_admin'})
+
+# @login_required(login_url='/login/')
+def admin_edit_book_view(request):
+    # if not request.user.is_staff:
+    #     return redirect('user_home')
+    return render(request, 'admin_edit_book.html', {'username': 'test_admin'})
+
+# @login_required(login_url='/login/')
+def admin_manage_book_view(request):
+    # if not request.user.is_staff:
+    #     return redirect('user_home')
+    return render(request, 'admin_manage_books.html', {'username': 'test_admin'})
+
+# @login_required(login_url='/login/')
+def admin_view_book_view(request):
+    # if not request.user.is_staff:
+    #     return redirect('user_home')
+    return render(request, 'admin_view_books.html', {'username': 'test_admin'})
+
 
 
 def logout_view(request):
@@ -117,14 +174,17 @@ def logout_view(request):
 
 
 # Error handlers
-def error_400(request, exception=None):
+def error_400(request,exception=None):
     return render(request, '400.html', status=400)
+
 
 def error_403(request, exception=None):
     return render(request, '403.html', status=403)
 
+
 def error_404(request, exception=None):
     return render(request, '404.html', status=404)
+
 
 def error_500(request):
     return render(request, '500.html', status=500)
