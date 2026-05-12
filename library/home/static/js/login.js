@@ -1,7 +1,3 @@
-/*
- * Handles client-side validation only.
- * Actual authentication is done server-side by Django.
- */
 document.addEventListener("DOMContentLoaded", function () {
 
     const form          = document.querySelector("form");
@@ -49,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Show / Hide password toggle
+    // Show/Hide password toggle
     if (showBtn) {
         showBtn.addEventListener("click", function () {
             if (passwordInput.value === "") return;
