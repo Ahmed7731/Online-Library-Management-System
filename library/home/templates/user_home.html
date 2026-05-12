@@ -6,9 +6,9 @@
 
 {% block nav_links %}
     <a href="{% url 'user_home' %}" class="active">Home</a>
-    <a href="#">Search</a>
-    <a href="#">Borrowed Books</a>
-    <a href="#">Available Books</a>
+    <a href="{% url 'user_search' %}">Search</a>
+    <a href="{% url 'user_borrowed_books' %}">Borrowed Books</a>
+    <a href="{% url 'user_available_books' %}">Available Books</a>
     <a href="{% url 'logout' %}" class="logout-link">Logout</a>
 {% endblock %}
 
@@ -24,7 +24,7 @@
                 <h3>🔍 Search Books</h3>
                 <p>Find books by title, author, or category</p>
             </div>
-            <a href="#">Go</a>
+            <a href="{% url 'user_search' %}">Go</a>
         </div>
 
         <div class="card">
@@ -32,7 +32,7 @@
                 <h3>📚 Available Books</h3>
                 <p>Browse all books currently in the library</p>
             </div>
-            <a href="#">View</a>
+            <a href="{% url 'user_available_books' %}">View</a>
         </div>
 
         <div class="card">
@@ -40,7 +40,7 @@
                 <h3>📖 Borrowed Books</h3>
                 <p>Check your borrowed books and return dates</p>
             </div>
-            <a href="#">Open</a>
+            <a href="{% url 'user_borrowed_books' %}">Open</a>
         </div>
 
     </div>

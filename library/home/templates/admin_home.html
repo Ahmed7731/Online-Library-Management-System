@@ -6,10 +6,10 @@
 
 {% block nav_links %}
     <a href="{% url 'admin_home' %}" class="active">Home</a>
-    <a href="#">Add Book</a>
-    <a href="#">Edit Book</a>
-    <a href="#">Manage Books</a>
-    <a href="#">View Books</a>
+    <a href="{% url 'admin_add_book' %}">Add Book</a>
+    <a href="{% url 'admin_edit_book' %}">Edit Book</a>
+    <a href="{% url 'admin_manage' %}">Manage Books</a>
+    <a href="{% url 'admin_view_books' %}">View Books</a>
     <a href="{% url 'logout' %}" class="logout-link">Logout</a>
 {% endblock %}
 
@@ -25,7 +25,7 @@
                 <h3>➕ Add Book</h3>
                 <p>Add new books to the library system</p>
             </div>
-            <a href="#">Open</a>
+            <a href="{% url 'admin_add_book' %}">Open</a>
         </div>
 
         <div class="card">
@@ -33,7 +33,7 @@
                 <h3>✏️ Edit Book</h3>
                 <p>Update existing book details and information</p>
             </div>
-            <a href="#">Open</a>
+            <a href="{% url 'admin_edit_book' %}">Open</a>
         </div>
 
         <div class="card">
@@ -41,7 +41,7 @@
                 <h3>🛠 Manage Books</h3>
                 <p>Delete or reorganize books in the library</p>
             </div>
-            <a href="#">Open</a>
+            <a href="{% url 'admin_manage' %}">Open</a>
         </div>
 
         <div class="card">
@@ -49,7 +49,7 @@
                 <h3>📚 View Books</h3>
                 <p>See the full catalogue of books in the system</p>
             </div>
-            <a href="#">Open</a>
+            <a href="{% url 'admin_view_books' %}">Open</a>
         </div>
 
     </div>

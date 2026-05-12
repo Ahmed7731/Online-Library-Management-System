@@ -1,3 +1,8 @@
+/*
+ * login.js — Django version
+ * Handles client-side validation only.
+ * Actual authentication is done server-side by Django.
+ */
 document.addEventListener("DOMContentLoaded", function () {
 
     const form          = document.querySelector("form");
@@ -7,15 +12,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const emailInput    = document.getElementById("email");
     const passwordInput = document.getElementById("password");
 
+    // Hide the show/hide button initially
     if (showBtn) showBtn.style.display = "none";
 
-    // Client-side validation before submitting to Django
+    // ── Client-side validation before submitting to Django ──
     form.addEventListener("submit", function (e) {
         e.preventDefault();
 
         const email    = emailInput.value.trim();
         const password = passwordInput.value.trim();
 
+        // Clear previous JS errors (Django server errors already rendered)
         emailError.textContent    = "";
         passwordError.textContent = "";
 
@@ -39,13 +46,13 @@ document.addEventListener("DOMContentLoaded", function () {
             isValid = false;
         }
 
-        // If valid, let Django handle the rest
+        // If valid → let Django handle the rest
         if (isValid) {
             form.submit();
         }
     });
 
-    // Show/Hide password toggle
+    // ── Show / Hide password toggle ──────────────────────────
     if (showBtn) {
         showBtn.addEventListener("click", function () {
             if (passwordInput.value === "") return;

@@ -1,4 +1,4 @@
-/* Reset & Base */
+/* Reset & Base*/
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -31,7 +31,7 @@ hr {
 a { color: inherit; text-decoration: none; }
 
 
-/* Error messages */
+/* ── Error messages ───────────────────────────────────────── */
 .error,
 #email-error,
 #password-error,
@@ -46,7 +46,9 @@ a { color: inherit; text-decoration: none; }
 }
 
 
-/* Top Navbar (used on all pages) */
+/* ============================================================
+   TOP NAVBAR  (used on all pages)
+   ============================================================ */
 .navbar {
   width: 100%;
   background: #2c2c2c;
@@ -92,7 +94,7 @@ a { color: inherit; text-decoration: none; }
   font-weight: 600;
 }
 
-/* Logout button */
+/* Logout button inside navbar */
 .navbar .nav-links a.logout-link {
   background: #1a9e7c;
   color: #fff;
@@ -107,7 +109,9 @@ a { color: inherit; text-decoration: none; }
 }
 
 
-/* Page: Home */
+/* ============================================================
+   PAGE: HOME  (body.page-home)
+   ============================================================ */
 body.page-home {
   display: flex;
   flex-direction: column;
@@ -181,7 +185,9 @@ body.page-home {
 }
 
 
-/* Page: Login + Signup */
+/* ============================================================
+   PAGE: LOGIN + SIGNUP  (body.page-login / body.page-signup)
+   ============================================================ */
 body.page-login,
 body.page-signup {
   display: flex;
@@ -240,7 +246,7 @@ body.page-signup {
   background: #fff;
 }
 
-/* Password container */
+/* Password container — button stays INSIDE the input */
 .password-container {
   position: relative;
   width: 100%;
@@ -357,7 +363,9 @@ body.page-signup {
 }
 
 
-/* Page: Dashboard (user home + admin home) */
+/* ============================================================
+   PAGE: DASHBOARD  (user home + admin home)
+   ============================================================ */
 body.page-dashboard {
   display: flex;
   flex-direction: column;
@@ -383,10 +391,10 @@ body.page-dashboard {
   margin-bottom: 32px;
 }
 
-/* Cards */
+/* Cards — stacked vertically */
 .cards {
   display: flex;
-  flex-direction: column;     
+  flex-direction: column;   
   gap: 16px;
   width: 100%;
 }
@@ -438,6 +446,253 @@ body.page-dashboard {
 .card a:hover { background: #148063; }
 
 .dashboard-footer {
+  text-align: center;
+  padding: 24px;
+  font-size: 0.82rem;
+  color: #bbb;
+  margin-top: auto;
+}
+/* ============================================================
+   PAGE: BOOKS  (all book-related pages)
+   ============================================================ */
+body.page-books {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.books-body {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+.books-body h2 {
+  font-size: 1.4rem;
+  margin-bottom: 24px;
+  color: #2c2c2c;
+}
+
+/* ── Styled table ─────────────────────────────────────────── */
+.lib-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+}
+
+.lib-table th {
+  background: #2c2c2c;
+  color: #fff;
+  padding: 13px 16px;
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.lib-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0ebe3;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.lib-table tr:last-child td { border-bottom: none; }
+.lib-table tr:hover td { background: #faf9f7; }
+
+/* ── Status badges ────────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.badge-available   { background: #d4f5ec; color: #1a9e7c; }
+.badge-unavailable { background: #fde8e8; color: #c0392b; }
+
+/* ── Buttons ──────────────────────────────────────────────── */
+.btn {
+  display: inline-block;
+  padding: 7px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn:active { transform: scale(0.97); }
+
+.btn-primary   { background: #1a9e7c; color: #fff; }
+.btn-primary:hover { background: #148063; }
+
+.btn-danger    { background: #e74c3c; color: #fff; }
+.btn-danger:hover  { background: #c0392b; }
+
+.btn-secondary { background: #2c2c2c; color: #fff; }
+.btn-secondary:hover { background: #444; }
+
+.btn:disabled  { background: #ccc; color: #888; cursor: not-allowed; }
+
+/* ── Feedback message box ─────────────────────────────────── */
+.msg-box {
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  display: none;
+}
+
+.msg-success { background: #d4f5ec; color: #1a9e7c; font-weight: 600; }
+.msg-error   { background: #fde8e8; color: #c0392b; font-weight: 600; }
+
+/* ── Add-book table ───────────────────────────────────────── */
+.add-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+  margin-bottom: 16px;
+}
+
+.add-table th {
+  background: #2c2c2c;
+  color: #fff;
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 0.83rem;
+}
+
+.add-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #f0ebe3;
+}
+
+.add-table input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1.5px solid #d4cdc5;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-family: inherit;
+  background: #faf9f7;
+  color: #2c2c2c;
+}
+
+.add-table input:focus {
+  border-color: #1a9e7c;
+  outline: none;
+  background: #fff;
+}
+
+.table-actions { display: flex; gap: 10px; margin-top: 8px; }
+
+/* ── Edit / detail form ───────────────────────────────────── */
+.books-form {
+  background: #fff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+  max-width: 520px;
+}
+
+.books-form label {
+  display: block;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 5px;
+  margin-top: 16px;
+}
+
+.books-form input[type="text"],
+.books-form input[type="number"],
+.books-form select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #d4cdc5;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: #faf9f7;
+  color: #2c2c2c;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.books-form input:focus,
+.books-form select:focus {
+  border-color: #1a9e7c;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(26,158,124,0.12);
+  background: #fff;
+}
+
+/* ── Search bar ───────────────────────────────────────────── */
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 11px 16px;
+  border: 1.5px solid #d4cdc5;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: #fff;
+  color: #2c2c2c;
+  transition: border-color 0.25s;
+}
+
+.search-bar input:focus {
+  border-color: #1a9e7c;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(26,158,124,0.12);
+}
+
+/* ── Book detail card ─────────────────────────────────────── */
+.book-detail-card {
+  background: #fff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+  max-width: 520px;
+}
+
+.book-detail-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 24px;
+  color: #2c2c2c;
+}
+
+.detail-row { margin-bottom: 16px; }
+
+.detail-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+}
+
+.detail-value {
+  font-size: 0.97rem;
+  color: #2c2c2c;
+}
+
+.books-footer {
   text-align: center;
   padding: 24px;
   font-size: 0.82rem;

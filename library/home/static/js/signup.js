@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const passwordInput        = document.getElementById("password");
     const confirmPasswordInput = document.getElementById("confirm_password");
 
-    // Client-side validation before submitting to Django
+    // ── Client-side validation before submitting to Django ──
     form.addEventListener("submit", function (e) {
         e.preventDefault();
 
@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const confirmPassword = confirmPasswordInput.value.trim();
         const isAdmin         = document.querySelector('input[name="is_admin"]:checked');
 
+        // Clear JS error messages
         usernameError.textContent        = "";
         emailError.textContent           = "";
         passwordError.textContent        = "";
@@ -72,13 +73,13 @@ document.addEventListener("DOMContentLoaded", function () {
             isValid = false;
         }
 
-        // If all valid, let Django handle creation
+        // If all valid → let Django handle creation
         if (isValid) {
             form.submit();
         }
     });
 
-    // Show/hide button
+    // Show/hide button functionality
     function setupToggle(input, button) {
         button.style.display = "none";
 
