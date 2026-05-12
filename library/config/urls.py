@@ -10,4 +10,5 @@ handler500 = 'home.views.error_500'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
+    path('', include('books.urls')),
 ]
