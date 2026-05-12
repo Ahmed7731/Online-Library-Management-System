@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Book Details — Library Management System{% endblock %}
+{% block body_class %}page-books{% endblock %}
+
+{% block nav_links %}
+    <a href="{% url 'user_home' %}">Home</a>
+    <a href="{% url 'user_search' %}">Search</a>
+    <a href="{% url 'user_available_books' %}">Available Books</a>
+    <a href="{% url 'user_borrowed_books' %}">Borrowed Books</a>
+    <a href="{% url 'logout' %}" class="logout-link">Logout</a>
+{% endblock %}
+
+{% block body %}
+<div class="books-body">
+    <div class="book-detail-card">
+        <h2 id="title">Loading...</h2>
+
+        <div id="msg" class="msg-box"></div>
+
+        <div class="detail-row">
+            <div class="detail-label">Author</div>
+            <div class="detail-value" id="bAuthor">—</div>
+        </div>
+        <div class="detail-row">
+            <div class="detail-label">Category</div>
+            <div class="detail-value" id="bCategory">—</div>
+        </div>
+        <div class="detail-row">
+            <div class="detail-label">Status</div>
+            <div class="detail-value" id="bStatus">—</div>
+        </div>
+        <div class="detail-row">
+            <div class="detail-label">Description</div>
+            <div class="detail-value" id="bDesc">—</div>
+        </div>
+
+        {% csrf_token %}
+        <div style="margin-top: 24px;">
+            <button id="borrowBtn" class="btn btn-primary">Borrow Book</button>
+        </div>
+    </div>
+</div>
+<p class="books-footer">© 2026 Library Management System</p>
+{% endblock %}
+
+{% block scripts %}
+<script>const bookId = {{ book_id }};</script>
+<script src="{% static 'js/user_borrow.js' %}"></script>
+<script src="{% static 'js/user_book_details.js' %}"></script>
+{% endblock %}

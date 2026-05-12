@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Edit Book — Library Management System{% endblock %}
+{% block body_class %}page-books{% endblock %}
+
+{% block nav_links %}
+    <a href="{% url 'admin_home' %}">Home</a>
+    <a href="{% url 'admin_add_book' %}">Add Book</a>
+    <a href="{% url 'admin_edit_book' %}" class="active">Edit Book</a>
+    <a href="{% url 'admin_manage' %}">Manage Books</a>
+    <a href="{% url 'admin_view_books' %}">View Books</a>
+    <a href="{% url 'logout' %}" class="logout-link">Logout</a>
+{% endblock %}
+
+{% block body %}
+<div class="books-body">
+    <h2>✏️ Edit a Book</h2>
+
+    <div id="msg" class="msg-box"></div>
+
+    <div class="books-form">
+        {% csrf_token %}
+
+        <label for="bookSelect">Select Book</label>
+        <select id="bookSelect"><option value="">-- Select --</option></select>
+
+        <label for="bookName">Book Name</label>
+        <input type="text" id="bookName" placeholder="Book Name">
+
+        <label for="author">Author</label>
+        <input type="text" id="author" placeholder="Author">
+
+        <label for="category">Category</label>
+        <input type="text" id="category" placeholder="Category">
+
+        <label for="description">Description</label>
+        <input type="text" id="description" placeholder="Description">
+
+        <div style="margin-top: 24px;">
+            <button type="button" id="saveBtn" class="btn btn-primary">Save Changes</button>
+        </div>
+    </div>
+</div>
+<p class="books-footer">© 2026 Library Management System</p>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/admin_edit_book.js' %}"></script>
+{% endblock %}
