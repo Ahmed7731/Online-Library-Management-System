@@ -77,17 +77,6 @@ http://127.0.0.1:8000/
 
 ---
 
-## 👥 Team Project
-* Ahmed Mansour
-* Abdelrahman Ehab
-* Mohamed Tarek
-* Mohamed Talaat
-* Lina Ibrahim
-* Marwan Mohamed
-
-
----
-
 ## 📌 Notes
 
 * Virtual environment files are excluded using `.gitignore`
